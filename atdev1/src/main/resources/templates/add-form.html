@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Save Employee</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+<h3>Employee directory</h3>
+<hr>
+<p class="h4 mb-4">Save Employee</p>
+ <form action="#" th:action="@{/students/save}" th:object="${student}"   method="post">
+<!-- for update hidden form field -->
+
+ <input type="hidden" th:field="*{id}"/>
+<!-- edit purpose
+<input type="text" th:field="*{fristName}" class="form-control mb-4 col-4" placeholder="Frist Name">
+-->
+ <input type="text" th:field="*{fristName}" class="form-control mb-4 col-4" placeholder="Frist Name"> 
+<input type="text" th:field="*{lastName}" class="form-control mb-4 col-4" placeholder="Last Name">
+<input type="text" th:field="*{email}" class="form-control mb-4 col-4" placeholder="Enter Email">
+<input type="text" th:field="*{mobile}" class="form-control mb-4 col-4" placeholder="Enter mobile">
+ <!--<input type="text" th:value="*{address.village}" class="form-control mb-4 col-4" placeholder="Enter village">
+<input type="text" th:value="*{dist}" class="form-control mb-4 col-4" placeholder="Enter dist">
+-->
+<!--   <input type="text" th:value="${address.dist}" class="form-control mb-4 col-4" placeholder="Distric"> -->
+
+
+
+<br>
+
+
+
+<button type="submit" class="btn btn-info col-2">Save</button>
+<hr>
+
+<a th:href="@{/students/list}">Back to Employee List</a>
+</form>
+
+</div>
+</body>
+</html>
